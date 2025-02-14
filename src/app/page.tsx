@@ -6,7 +6,7 @@ import Instructors from "@/components/Instructors";
 import MusicSchoolTestimonials from "@/components/TestimonialCards";
 import UpcomingWebinars from "@/components/UpcomingWebinars";
 import WhyChooseUs from "@/components/WhyChooseUs";
-
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
       {/* <UpcomingWebinars /> */}
       <Instructors />
       <Footer />
+      <Chatbot />
     </main>
   );
 }
