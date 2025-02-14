@@ -1,13 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { FaFire } from "react-icons/fa"; // Fire icon
+import { getDoc, doc } from "firebase/firestore"; // Firestore functions
+import { db } from '../../firebase-config'; // Import Firestore instance (already initialized)
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const [streak, setStreak] = useState<number>(5); // Hardcoded streak
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [question, setQuestion] = useState<string | null>(null);
+
+  const userId = 'hardcodedUserId'; // Simulated user ID
+  const hardcodedStreak = 5; // Simulated streak
+
+  // Use the already initialized `db` instance from firebase-config.ts
+  // No need to call `getFirestore()` here
+
+  // Helper function for conditional class names (equivalent to 'cn')
+  const cn = (...classes: string[]) => {
+    return classes.filter(Boolean).join(' ');
+  };
+
+  useEffect(() => {
+    setStreak(hardcodedStreak); // Set hardcoded streak
+  }, []);
+
+  const handleIconClick = async () => {
+    const today = new Date().toISOString().split('T')[0]; // Get today's date
+    const questionRef = doc(db, 'questions', today); // Get the daily question
+    const questionSnap = await getDoc(questionRef);
+
+    if (questionSnap.exists()) {
+      setQuestion(questionSnap.data().question); // Set the question
+      setIsModalOpen(true); // Open the modal
+    }
+  };
+
 
   return (
     <div className={cn("fixed top-10 inset-x-0 max-w-4xl mx-auto z-50")}>
@@ -37,6 +70,31 @@ function Navbar({ className }: { className?: string }) {
             <MenuItem setActive={setActive} active={active} item="Contact Us" />
           </Link>
         </Menu>
+
+
+        {/* FIRE STREAK */}
+        <div className="flex items-center space-x-2 cursor-pointer absolute right-24 top-1/2 transform -translate-y-1/2" onClick={handleIconClick}>
+        <FaFire size={24} className="text-orange-500" />
+        <span className="text-white font-semibold">{streak}</span>
+      </div>
+
+        {/* Modal */}
+        {isModalOpen && question && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-lg font-bold mb-4">Today's Question</h2>
+            <p className="text-black">{question}</p>
+            <button
+              className="mt-4 px-4 py-2 bg-teal-500 text-black rounded-lg"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+
 
         {/* Right Side - Sign In / User Button */}
         <div className="flex items-center space-x-4">
