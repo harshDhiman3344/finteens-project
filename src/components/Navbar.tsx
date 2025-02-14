@@ -73,7 +73,7 @@ function Navbar({ className }: { className?: string }) {
 
 
         {/* FIRE STREAK */}
-        <div className="flex items-center space-x-2 cursor-pointer absolute right-24 top-1/2 transform -translate-y-1/2" onClick={handleIconClick}>
+        <div className="flex items-center space-x-2 cursor-pointer absolute right-[150px] top-1/2 transform -translate-y-1/2 max-w-screen-lg" onClick={handleIconClick}>
         <FaFire size={24} className="text-orange-500" />
         <span className="text-white font-semibold">{streak}</span>
       </div>
