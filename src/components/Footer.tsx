@@ -7,9 +7,7 @@ function Footer() {
         <div>
           <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
           <p className="mb-4">
-            Music School is a premier institution dedicated to teaching the art
-            and science of music. We nurture talent from the ground up,
-            fostering a vibrant community of musicians.
+          FinTeens makes financial education fun, interactive, and practical for teens through AI-powered, gamified learning. By bridging the education gap, we equip teens with real-world money skills, foster smart habits, and build a financially confident generation.
           </p>
         </div>
         <div>
@@ -80,7 +78,7 @@ function Footer() {
           <p>Phone: (123) 456-7890</p>
         </div>
         </div>
-        <p className="text-center text-xs pt-8">© 2024 Music School. All rights reserved.</p>
+        <p className="text-center text-xs pt-8">© 2025. All rights reserved.</p>
     </footer>
   )
 }
