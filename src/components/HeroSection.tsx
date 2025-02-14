@@ -17,8 +17,8 @@ function HeroSection() {
             >Money Made Easy, 
             Future Made Smart</h1>
             <p
-            className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-lg mx-auto"
-            >Dive into our comprehensive music courses and transform your musical journey today. Whether you're a beginner or looking to refine your skills, join us to unlock your true potential.</p>
+            className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-2xl mx-auto"
+            >A Next-gen financial literacy platform that makes learning about money fun, engaging, and practical for teens.Whether it's budgeting, saving, investing, or understanding credit, FinTeens turns financial education into an exciting adventure! </p>
             <div className="mt-4">
                 <Link href={"/courses"}>
                     <Button
