@@ -28,7 +28,7 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/courses">
               Advanced
             </HoveredLink>
-            <HoveredLink href="/courses">Songwriting</HoveredLink>
+            <HoveredLink href="/courses">Noble</HoveredLink>
             <HoveredLink href="/courses">
               Master
             </HoveredLink>

@@ -3,7 +3,7 @@
 import React, { FormEvent, useState } from 'react';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 
-function MusicSchoolContactUs() {
+function FinTeensContactUs() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -14,21 +14,17 @@ function MusicSchoolContactUs() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-12 pt-36 relative">
-      {' '}
       {/* Ensure the container is relative */}
       {/* BackgroundBeams with adjusted z-index */}
       <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
       {/* Content with higher z-index */}
       <div className="max-w-2xl mx-auto p-4 relative z-10">
-        {' '}
         {/* Add relative and z-10 to bring content to the front */}
         <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">
           Contact Us
         </h1>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
-          We&apos;re here to help with any questions about our courses,
-          programs, or events. Reach out and let us know how we can assist you
-          in your musical journey.
+          Have questions about our financial literacy programs, courses, or events? Feel free to reach out, and we'll help you navigate your financial journey with ease.
         </p>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <input
@@ -59,4 +55,4 @@ function MusicSchoolContactUs() {
   );
 }
 
-export default MusicSchoolContactUs;
+export default FinTeensContactUs;
