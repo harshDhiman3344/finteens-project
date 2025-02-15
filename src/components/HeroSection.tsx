@@ -18,7 +18,7 @@ function HeroSection() {
             Future Made Smart</h1>
             <p
             className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-2xl mx-auto"
-            >A Next-gen financial literacy platform that makes learning about money fun, engaging, and practical for teens.Whether it's budgeting, saving, investing, or understanding credit, FinTeens turns financial education into an exciting adventure! </p>
+            >A Next-gen financial literacy platform that makes learning about money fun, engaging, and practical for teens.Whether it&apos;s budgeting, saving, investing, or understanding credit, FinTeens turns financial education into an exciting adventure! </p>
             <div className="mt-4">
                 <Link href={"/courses"}>
                     <Button

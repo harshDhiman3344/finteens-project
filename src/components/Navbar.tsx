@@ -82,7 +82,7 @@ function Navbar({ className }: { className?: string }) {
         {isModalOpen && question && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 className="text-lg font-bold mb-4">Today's Question</h2>
+            <h2 className="text-lg font-bold mb-4">Today&apos;s Question</h2>
             <p className="text-black">{question}</p>
             <button
               className="mt-4 px-4 py-2 bg-teal-500 text-black rounded-lg"

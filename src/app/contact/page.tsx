@@ -24,7 +24,7 @@ function FinTeensContactUs() {
           Contact Us
         </h1>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
-          Have questions about our financial literacy programs, courses, or events? Feel free to reach out, and we'll help you navigate your financial journey with ease.
+          Have questions about our financial literacy programs, courses, or events? Feel free to reach out, and we&apos;ll help you navigate your financial journey with ease.
         </p>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <input
