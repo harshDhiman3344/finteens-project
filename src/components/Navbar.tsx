@@ -15,6 +15,18 @@ function Navbar({ className }: { className?: string }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [question, setQuestion] = useState<string | null>(null);
 
+
+  const [answer, setAnswer] = useState("");
+
+const handleSend = () => {
+  // Do something with the answer (e.g., send it somewhere)
+  console.log(answer);
+  
+  // Clear the input field
+  setAnswer("");
+};
+
+
   const userId = 'hardcodedUserId'; // Simulated user ID
   const hardcodedStreak = 5; // Simulated streak
 
@@ -72,27 +84,41 @@ function Navbar({ className }: { className?: string }) {
         </Menu>
 
 
-        {/* FIRE STREAK */}
-        <div className="flex items-center space-x-2 cursor-pointer absolute right-[150px] top-1/2 transform -translate-y-1/2 max-w-screen-lg" onClick={handleIconClick}>
-        <FaFire size={24} className="text-orange-500" />
-        <span className="text-white font-semibold">{streak}</span>
+       {/* FIRE STREAK */}
+<div className="flex items-center space-x-2 cursor-pointer absolute right-[150px] top-1/2 transform -translate-y-1/2 max-w-screen-lg" onClick={handleIconClick}>
+  <FaFire size={24} className="text-orange-500" />
+  <span className="text-white font-semibold">{streak}</span>
+</div>
+
+{/* Modal */}
+{isModalOpen && question && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+      <h2 className="text-lg font-bold mb-4">Today&apos;s Question</h2>
+      <p className="text-black">{question}</p>
+
+      {/* Textbox & Send Button */}
+      <div className="mt-4 flex">
+      <input 
+  type="text" 
+  value={answer} 
+  onChange={(e) => setAnswer(e.target.value)} 
+  className="border p-2 rounded w-full text-black"
+/>
+<button onClick={handleSend} className="bg-teal-500 text-white px-4 py-2 rounded">
+  Send
+</button>
       </div>
 
-        {/* Modal */}
-        {isModalOpen && question && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 className="text-lg font-bold mb-4">Today&apos;s Question</h2>
-            <p className="text-black">{question}</p>
-            <button
-              className="mt-4 px-4 py-2 bg-teal-500 text-black rounded-lg"
-              onClick={() => setIsModalOpen(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      <button
+        className="mt-4 px-4 py-2 bg-teal-500 text-black rounded-lg w-full"
+        onClick={() => setIsModalOpen(false)}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
 
 
 

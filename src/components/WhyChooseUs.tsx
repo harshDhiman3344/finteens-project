@@ -27,7 +27,7 @@ const musicSchoolContent = [
     {
       title: 'Level-5',
       description:
-        'Our curriculum is continuously updated to include the latest music education trends and technologies, ensuring you’re always learning with the most current and effective methods. Say goodbye to outdated materials and welcome an education that evolves with the industry.',
+        'Our curriculum is continuously updated to include the latest finiance education trends and technologies, ensuring you’re always learning with the most current and effective methods. Say goodbye to outdated materials and welcome an education that evolves with the industry.',
     },
     {
       title: 'Level-6',
