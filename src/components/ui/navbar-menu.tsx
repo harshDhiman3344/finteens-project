@@ -66,6 +66,7 @@ export const Menu = ({
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <nav
