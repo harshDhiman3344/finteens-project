@@ -21,7 +21,7 @@ export default function Chatbot() {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer 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`
+                    "Authorization": `Bearer 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`
                 },
                 body: JSON.stringify({
                     model: "llama3-70b-8192",
