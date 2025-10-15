@@ -17,12 +17,12 @@ export default function Chatbot() {
         setInput("");
 
         try {
-            const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer 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`
-                },
+           const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+              method: "POST",
+              headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${process.env.NEXT_PUBLIC_GROQ_API_KEY}`,
+              },
                 body: JSON.stringify({
                     model: "llama3-70b-8192",
                     messages: [
